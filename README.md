@@ -9,6 +9,9 @@ Command2Vec is an embedding algorithm designed for clustering 3D modeling behavi
 
 ![Alt](./workflow.png#pic_center=100x)
 
+This repository provides an implementation for Command2vec in:
+Paper link
+
 
 ### Requirements
 
