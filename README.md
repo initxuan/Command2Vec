@@ -15,6 +15,7 @@ Paper link
 ### Requirements
 
 <p align="justify">The codebase is implemented in Python 2.7.18 | Anaconda3 (Python 3.8.5 64-bit). Package used for development are just below.</p>
+
 ```
 numpy             
 gensim           
@@ -26,25 +27,31 @@ sklearn
 <p align="justify">The code takes two input folders('edges' and 'nodes') with txt files. </p>
 
 <p align="justify">Every file in folder 'edges' is a set of edges of a graph and files have a numeric index as a name. The structure of the file is as follows</p>
+
 ```
 start-point-number end-point-number
 ```
 
 <p align="justify">Every file in folder 'nodes' is a set of nodes of a graph and files have a numeric index as a name. The index of edge file and node file of the same graph is the same. The structure of the file is as follows</p>
+
 ```
 the-point-number binary-form-of-the-number corresponding-command-name
 ```
+
 <p align="justify">The dataset used in the paper is in the folders 'edges' and 'nodes'</p>
 ### Options:
 <p align="justify">Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments</p>
 
 #### Input and output options
+
 ```
   --edgeslist   STR    Input edges-list folder       Default is `edges`.
   --nodeslist   STR    Input nodes-list folder       Default is `nodes`.
   --output      STR    Save output-results folder    Default is `emb`.
 ```
+
 #### Model options
+
 ```
   --theta          INT          The theta used to select command sequence.        Default is 7.
   --dimensions     INT          Number of dimensions.                             Default is 128.
@@ -52,10 +59,12 @@ the-point-number binary-form-of-the-number corresponding-command-name
   --iter           INT          Number of feature extraction recursions.          Default is 10000.
   --workers        INT          Number of workers.                                Default is 8.
 ```
+
 ### Examples:
 <p align="justify">The following commands learn an embedding of the command-graphs and write it to disk. The code will save the key command extraction results of each command-graph, the embedding of each command and the embedding of the whole command-graph in the output folder. For the file that saves the embedding results of the whole command-graph, each line represents the embedding of a command-graph. The line index corresponds to the index of the input file</p>
 
 <p align="justify">Creating a command2vec embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.</p>
+
 ```sh
 $ python Command2Vec.py
 ```
@@ -73,11 +82,13 @@ $ python Command2Vec.py --dimensions 32
 ```
 
 <p align="justify">Finally, when you want to cluster the embedding results, you need to modify the input and output file path in `cluster.py` script, and then run the following command</p>
+
 ```sh
 $ python cluster.py
 ```
 
 ### Project description
+
 ```
   Command2Vec.py    The script of creating embedding of the command-graphs
   cluster.py        The script for clustering analysis of embedding results
