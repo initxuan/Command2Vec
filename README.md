@@ -23,8 +23,18 @@ sklearn
 ```
 
 ### Datasets:
+The code takes two input folders('edges' and 'nodes') with txt files. 
 
+Every file in folder 'edges' is a set of edges of a graph and files have a numeric index as a name. The structure of the file is as follows
+```
+start-point-number end-point-number
+```
 
+Every file in folder 'nodes' is a set of nodes of a graph and files have a numeric index as a name. The index of edge file and node file of the same graph is the same. The structure of the file is as follows
+```
+the-point-number binary-form-of-the-number corresponding-command-name
+```
+The dataset used in the paper is in the folders 'edges' and 'nodes'
 ### Options:
 
 
