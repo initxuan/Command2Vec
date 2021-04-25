@@ -23,6 +23,7 @@ def kmeans_building_from_sklearn(data, types_num, types_init = "k-means++"):
 
 if __name__ == "__main__":
     cluster_num = 6
+    # You can change the following two variables to custom paths
     graphvec_path = "./emb/graphvec.txt"
     cluster_path = "./cluster/group.txt"
 
