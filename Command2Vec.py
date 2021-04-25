@@ -35,6 +35,7 @@ def parse_args():
 
 def learn_embedding(cmd2word_list, args):
     savepath = os.path.join(args.output, "cmdembedding.emb")
+    # babysit the parameters in the following function
     model = Word2Vec(cmd2word_list, size=args.dimension, window=args.window_size, min_count=0, sg=1, workers=args.workers, iter=args.iter, alpha=0.001)
     # for windows
     model.save_word2vec_format(savepath)
