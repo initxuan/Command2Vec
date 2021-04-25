@@ -4,17 +4,17 @@ Command2Vec
 
 ### Abstract
 
-Command2Vec is an embedding algorithm designed for clustering 3D modeling behavior sequences in design industries. Its input data is originally extracted from Command-object graph which is a data structure retrieved from event logs generated during modeler’s 3D modeling process. Command graph can represent the modeler’s operational 'map' during the modeling process. Command2Vec is applied in a study of 112 participants modeling on a 'spiral stair' task. By extracting the event log generated in each participant’s modeling process into command graph, we classified their behavior sequences into certain groups using Command2Vec. To verify the effectiveness of our classification, we use external evaluation by inviting experts with extensive modeling experience to grade the classification results. The final grading show that our algorithm performs well in some clustering results that were with significant features.
+<p align="justify">Command2Vec is an embedding algorithm designed for clustering 3D modeling behavior sequences in design industries. Its input data is originally extracted from Command-object graph which is a data structure retrieved from event logs generated during modeler’s 3D modeling process. Command graph can represent the modeler’s operational 'map' during the modeling process. Command2Vec is applied in a study of 112 participants modeling on a 'spiral stair' task. By extracting the event log generated in each participant’s modeling process into command graph, we classified their behavior sequences into certain groups using Command2Vec. To verify the effectiveness of our classification, we use external evaluation by inviting experts with extensive modeling experience to grade the classification results. The final grading show that our algorithm performs well in some clustering results that were with significant features.</p>
 
 <div align=center><img src="./workflow.png" width="400"/></div>
 
-This repository provides an implementation for Command2vec in:
+<p align="justify">This repository provides an implementation for Command2vec in:</p>
 Paper link
 
 
 ### Requirements
 
-The codebase is implemented in Python 2.7.18 | Anaconda3 (Python 3.8.5 64-bit). Package used for development are just below.
+<p align="justify">The codebase is implemented in Python 2.7.18 | Anaconda3 (Python 3.8.5 64-bit). Package used for development are just below.</p>
 ```
 numpy             
 gensim           
@@ -23,20 +23,20 @@ sklearn
 ```
 
 ### Datasets:
-The code takes two input folders('edges' and 'nodes') with txt files. 
+<p align="justify">The code takes two input folders('edges' and 'nodes') with txt files. </p>
 
-Every file in folder 'edges' is a set of edges of a graph and files have a numeric index as a name. The structure of the file is as follows
+<p align="justify">Every file in folder 'edges' is a set of edges of a graph and files have a numeric index as a name. The structure of the file is as follows</p>
 ```
 start-point-number end-point-number
 ```
 
-Every file in folder 'nodes' is a set of nodes of a graph and files have a numeric index as a name. The index of edge file and node file of the same graph is the same. The structure of the file is as follows
+<p align="justify">Every file in folder 'nodes' is a set of nodes of a graph and files have a numeric index as a name. The index of edge file and node file of the same graph is the same. The structure of the file is as follows</p>
 ```
 the-point-number binary-form-of-the-number corresponding-command-name
 ```
-The dataset used in the paper is in the folders 'edges' and 'nodes'
+<p align="justify">The dataset used in the paper is in the folders 'edges' and 'nodes'</p>
 ### Options:
-Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments
+<p align="justify">Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments</p>
 
 #### Input and output options
 ```
@@ -53,26 +53,26 @@ Learning of the command-graph embedding is handled by the `./Command2Vec.py` scr
   --workers        INT          Number of workers.                                Default is 8.
 ```
 ### Examples:
-The following commands learn an embedding of the command-graphs and write it to disk. The code will save the key command extraction results of each command-graph, the embedding of each command and the embedding of the whole command-graph in the output folder. For the file that saves the embedding results of the whole command-graph, each line represents the embedding of a command-graph. The line index corresponds to the index of the input file
+<p align="justify">The following commands learn an embedding of the command-graphs and write it to disk. The code will save the key command extraction results of each command-graph, the embedding of each command and the embedding of the whole command-graph in the output folder. For the file that saves the embedding results of the whole command-graph, each line represents the embedding of a command-graph. The line index corresponds to the index of the input file</p>
 
-Creating a command2vec embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
+<p align="justify">Creating a command2vec embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.</p>
 ```sh
 $ python Command2Vec.py
 ```
 
-Creating an embedding of an other dataset. Saving the output in a custom place.
+<p align="justify">Creating an embedding of an other dataset. Saving the output in a custom place.</p>
 
 ```sh
 $ python Command2Vec.py --input-path new_data/ --output-path new_save_path/
 ```
 
-Creating an embedding of the default dataset in 32 dimensions.
+<p align="justify">Creating an embedding of the default dataset in 32 dimensions.</p>
 
 ```sh
 $ python Command2Vec.py --dimensions 32
 ```
 
-Finally, when you want to cluster the embedding results, you need to modify the input and output file path in `cluster.py` script, and then run the following command
+<p align="justify">Finally, when you want to cluster the embedding results, you need to modify the input and output file path in `cluster.py` script, and then run the following command</p>
 ```sh
 $ python cluster.py
 ```
