@@ -36,6 +36,43 @@ the-point-number binary-form-of-the-number corresponding-command-name
 ```
 The dataset used in the paper is in the folders 'edges' and 'nodes'
 ### Options:
+Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments
 
-
+#### Input and output options
+```
+  --edgeslist   STR    Input edges-list folder       Default is `edges`.
+  --nodeslist   STR    Input nodes-list folder       Default is `nodes`.
+  --output      STR    Save output-results folder    Default is `emb`.
+```
+#### Model options
+```
+  --theta          INT          The theta used to select command sequence.        Default is 7.
+  --dimensions     INT          Number of dimensions.                             Default is 128.
+  --window-size    INT          Context size for optimization.                    Default is 4
+  --iter           INT          Number of feature extraction recursions.          Default is 10000.
+  --workers        INT          Number of workers.                                Default is 8.
+```
 ### Examples:
+The following commands learn an embedding of the command-graphs and write it to disk. The code will save the key command extraction results of each command-graph, the embedding of each command and the embedding of the whole command-graph in the output folder. For the file that saves the embedding results of the whole command-graph, each line represents the embedding of a command-graph. The line index corresponds to the index of the input file
+
+Creating a command2vec embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.
+```sh
+$ python Command2Vec.py
+```
+
+Creating an embedding of an other dataset. Saving the output in a custom place.
+
+```sh
+$ python Command2Vec.py --input-path new_data/ --output-path new_save_path/
+```
+
+Creating an embedding of the default dataset in 32 dimensions.
+
+```sh
+$ python Command2Vec.py --dimensions 32
+```
+
+
+
+
+
