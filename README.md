@@ -39,8 +39,10 @@ the-point-number binary-form-of-the-number corresponding-command-name
 ```
 
 <p align="justify">The dataset used in the paper is in the folders 'edges' and 'nodes'</p>
+
 ### Options:
-<p align="justify">Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments</p>
+
+Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments
 
 #### Input and output options
 
@@ -81,7 +83,7 @@ $ python Command2Vec.py --input-path new_data/ --output-path new_save_path/
 $ python Command2Vec.py --dimensions 32
 ```
 
-<p align="justify">Finally, when you want to cluster the embedding results, you need to modify the input and output file path in `cluster.py` script, and then run the following command</p>
+Finally, when you want to cluster the embedding results, you need to modify the input and output file path in `cluster.py` script, and then run the following command
 
 ```sh
 $ python cluster.py
