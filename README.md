@@ -4,7 +4,7 @@ Command2Vec
 
 ### Abstract
 
-Command2Vec is an embedding algorithm designed for clustering 3D modeling behavior sequences in design industries. Its input data is originally extracted from Command-object graph which is a data structure retrieved from event logs generated during modeler’s 3D modeling process. Command graph can represent the modeler’s operational ‘map’ during the modeling process. Command2Vec is applied in a study of 112 participants modeling on a ‘spiral stair’ task. By extracting the event log generated in each participant’s modeling process into command graph, we classified their behavior sequences into certain groups using Command2Vec. To verify the effectiveness of our classification, we use external evaluation by inviting experts with extensive modeling experience to grade the classification results. The final grading show that our algorithm performs well in some clustering results that were with significant features.
+Command2Vec is an embedding algorithm designed for clustering 3D modeling behavior sequences in design industries. Its input data is originally extracted from Command-object graph which is a data structure retrieved from event logs generated during modeler’s 3D modeling process. Command graph can represent the modeler’s operational 'map' during the modeling process. Command2Vec is applied in a study of 112 participants modeling on a 'spiral stair' task. By extracting the event log generated in each participant’s modeling process into command graph, we classified their behavior sequences into certain groups using Command2Vec. To verify the effectiveness of our classification, we use external evaluation by inviting experts with extensive modeling experience to grade the classification results. The final grading show that our algorithm performs well in some clustering results that were with significant features.
 
 <div align=center><img src="./workflow.png" width="400"/></div>
 
@@ -72,7 +72,18 @@ Creating an embedding of the default dataset in 32 dimensions.
 $ python Command2Vec.py --dimensions 32
 ```
 
+Finally, when you want to cluster the embedding results, you need to modify the input and output file path in `cluster.py` script, and then run the following command
+```sh
+$ python cluster.py
+```
 
-
+### Project description
+```
+  Command2Vec.py    The script of creating embedding of the command-graphs
+  cluster.py        The script for clustering analysis of embedding results
+  edges, nodes      The default input folder
+  emb               The default output folder
+  cluster           The default folder saving the cluster results
+```
 
 
