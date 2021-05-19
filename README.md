@@ -26,23 +26,23 @@ sklearn
 ### Datasets:
 <p align="justify">The code takes two input folders('edges' and 'nodes') with txt files. </p>
 
-<p align="justify">Every file in folder 'edges' is a set of edges of a graph and files have a numeric index as a name. The structure of the file is as follows</p>
+<p align="justify">Every txt file in folder 'edges' is a set of edges of a graph and each txt file was named with an unique sequential number. The structure of the txt file is as follows</p>
 
 ```
 start-point-number end-point-number
 ```
 
-<p align="justify">Every file in folder 'nodes' is a set of nodes of a graph and files have a numeric index as a name. The index of edge file and node file of the same graph is the same. The structure of the file is as follows</p>
+<p align="justify">Every txt file in folder 'nodes' is a set of nodes of a graph and each txt file was named with an unique sequential number corresponding to name of txt file in edges folder. The structure of the txt file is as follows</p>
 
 ```
 the-point-number binary-form-of-the-number corresponding-command-name
 ```
 
-<p align="justify">The dataset used in the paper is in the folders 'edges' and 'nodes'</p>
+<p align="justify">The dataset used in the paper is in the folders of 'edges' and 'nodes'</p>
 
 ### Options:
 
-Learning of the command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments
+Learning of Command-graph embedding is handled by the `./Command2Vec.py` script which provides the following command line arguments
 
 #### Input and output options
 
@@ -63,7 +63,7 @@ Learning of the command-graph embedding is handled by the `./Command2Vec.py` scr
 ```
 
 ### Examples:
-<p align="justify">The following commands learn an embedding of the command-graphs and write it to disk. The code will save the key command extraction results of each command-graph, the embedding of each command and the embedding of the whole command-graph in the output folder. For the file that saves the embedding results of the whole command-graph, each line represents the embedding of a command-graph. The line index corresponds to the index of the input file</p>
+<p align="justify">The following commands are learning the embedding of the command-graphs and write to disk. The code will save the key commands extracted from each command-graph. Embeddings of each command and the whole command-graph are in the output folder. Each line in the output file represents an embedding of a command-graph. The line index corresponds to the name of the input file</p>
 
 <p align="justify">Creating a command2vec embedding of the default dataset with the default hyperparameter settings. Saving the embedding at the default path.</p>
 
@@ -98,5 +98,4 @@ $ python cluster.py
   emb               The default output folder
   cluster           The default folder saving the cluster results
 ```
-
 
