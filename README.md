@@ -9,7 +9,7 @@ Command2Vec
 <div align=center><img src="./workflow.png" width="400"/></div>
 
 <p align="justify">This repository provides an implementation for Command2vec in:</p>
-Paper link
+[Paper link](https://www.researchgate.net/publication/354763236_Command2Vec_Feature_Learning_of_3D_Modeling_Behavior_Sequence-A_Case_Study_on_Spiral-stair)
 
 
 ### Requirements
